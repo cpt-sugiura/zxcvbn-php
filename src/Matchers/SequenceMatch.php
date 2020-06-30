@@ -87,9 +87,9 @@ class SequenceMatch extends Match
     public function getFeedback($isSoleMatch)
     {
         return [
-            'warning' => "Sequences like abc or 6543 are easy to guess",
+            'warning' => "abcや6543のような連番は簡単に推測されます。",
             'suggestions' => [
-                'Avoid sequences'
+                '連番を避けてください。'
             ]
         ];
     }

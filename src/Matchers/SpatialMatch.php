@@ -57,13 +57,13 @@ class SpatialMatch extends Match
     public function getFeedback($isSoleMatch)
     {
         $warning = $this->turns == 1
-            ? 'Straight rows of keys are easy to guess'
-            : 'Short keyboard patterns are easy to guess';
+            ? 'キーボード上で並んでいる文字列は推測されやすいです。'
+            : 'キーボード上で集まっている文字列は推測されやすいです。';
 
         return [
             'warning' => $warning,
             'suggestions' => [
-                'Use a longer keyboard pattern with more turns'
+                '何度もカーブする長いキーボードパターンを使ってください。'
             ]
         ];
     }
@@ -150,7 +150,7 @@ class SpatialMatch extends Match
                     $j += 1;
                 } else {
                     // otherwise push the pattern discovered so far, if any...
-                    
+
                     // Ignore length 1 or 2 chains.
                     if ($j - $i > 2) {
                         $result[] = [

@@ -33,10 +33,10 @@ class YearMatch extends Match
     public function getFeedback($isSoleMatch)
     {
         return [
-            'warning' => "Recent years are easy to guess",
+            'warning' => "最近の年は推測されやすいです。",
             'suggestions' => [
-                'Avoid recent years',
-                'Avoid years that are associated with you',
+                '最近の年を避けてください。',
+                'あなたに関連する年を避けてください。',
             ]
         ];
     }

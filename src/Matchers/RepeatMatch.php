@@ -85,13 +85,13 @@ class RepeatMatch extends Match
     public function getFeedback($isSoleMatch)
     {
         $warning = mb_strlen($this->repeatedChar) == 1
-            ? 'Repeats like "aaa" are easy to guess'
-            : 'Repeats like "abcabcabc" are only slightly harder to guess than "abc"';
+            ? "'aaa'のような繰り返しは推測されやすいです。"
+            : "'abcabcabc'のような繰り返しは、'abc'よりもわずかに推測されにくいだけです。";
 
         return [
             'warning' => $warning,
             'suggestions' => [
-                'Avoid repeated words and characters'
+                '言葉や文字の繰り返しを避けてください。'
             ]
         ];
     }

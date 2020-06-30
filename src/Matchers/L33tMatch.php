@@ -99,7 +99,7 @@ class L33tMatch extends DictionaryMatch
     {
         $feedback = parent::getFeedback($isSoleMatch);
 
-        $feedback['suggestions'][] = "Predictable substitutions like '@' instead of 'a' don't help very much";
+        $feedback['suggestions'][] = "'a' の代わりに '@' のような予測可能な代用はあまり役に立ちません。";
 
         return $feedback;
     }

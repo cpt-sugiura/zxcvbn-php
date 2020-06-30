@@ -108,9 +108,9 @@ class DateMatch extends Match
     public function getFeedback($isSoleMatch)
     {
         return [
-            'warning' => "Dates are often easy to guess",
+            'warning' => "日付は簡単に推測できることが多いです。",
             'suggestions' => [
-                'Avoid dates and years that are associated with you'
+                'あなたに関連する日付や年を避けてください。'
             ]
         ];
     }

@@ -44,7 +44,7 @@ class ReverseDictionaryMatch extends DictionaryMatch
         $feedback = parent::getFeedback($isSoleMatch);
 
         if (mb_strlen($this->token) >= 4) {
-            $feedback['suggestions'][] = "Reversed words aren't much harder to guess";
+            $feedback['suggestions'][] = "逆順の言葉の推測は難しくないです。";
         }
 
         return $feedback;

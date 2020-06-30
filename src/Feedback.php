@@ -24,8 +24,8 @@ class Feedback
             return [
                 'warning' => '',
                 'suggestions' => [
-                    "Use a few words, avoid common phrases",
-                    "No need for symbols, digits, or uppercase letters"
+                    "いくつかの単語を使用して、一般的なフレーズを避けてください。",
+                    "記号、数字、大文字は必要ありません。"
                 ]
             ];
         }
@@ -47,7 +47,7 @@ class Feedback
         }
 
         $feedback = $longestMatch->getFeedback(count($sequence) === 1);
-        $extraFeedback = 'Add another word or two. Uncommon words are better.';
+        $extraFeedback = '別の語を追加した方が良いです。珍しい言葉であればなお良いです。';
 
         array_unshift($feedback['suggestions'], $extraFeedback);
         return $feedback;

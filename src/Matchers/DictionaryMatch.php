@@ -95,9 +95,9 @@ class DictionaryMatch extends Match
         ];
 
         if (preg_match($startUpper, $this->token)) {
-            $feedback['suggestions'][] = "Capitalization doesn't help very much";
+            $feedback['suggestions'][] = "大文字にしてもあまり役に立ちません。";
         } elseif (preg_match($allUpper, $this->token) && mb_strtolower($this->token) != $this->token) {
-            $feedback['suggestions'][] = "All-uppercase is almost as easy to guess as all-lowercase";
+            $feedback['suggestions'][] = "すべて大文字のパスワードは、すべて小文字と同じくらい簡単に推測されます。";
         }
 
         return $feedback;
@@ -109,28 +109,28 @@ class DictionaryMatch extends Match
             case 'passwords':
                 if ($isSoleMatch && !$this->l33t && !$this->reversed) {
                     if ($this->rank <= 10) {
-                        return 'This is a top-10 common password';
+                        return 'これはよく使われているパスワードのトップ10です。';
                     } elseif ($this->rank <= 100) {
-                        return 'This is a top-100 common password';
+                        return 'これはよく使われているパスワードのトップ100です。';
                     } else {
-                        return 'This is a very common password';
+                        return 'これはよく使われているパスワードです。';
                     }
                 } elseif ($this->getGuessesLog10() <= 4) {
-                    return 'This is similar to a commonly used password';
+                    return 'これはよく使われているパスワードに似ています。';
                 }
                 break;
             case 'english_wikipedia':
                 if ($isSoleMatch) {
-                    return 'A word by itself is easy to guess';
+                    return '単語単体は推測されやすいです。';
                 }
                 break;
             case 'surnames':
             case 'male_names':
             case 'female_names':
                 if ($isSoleMatch) {
-                    return 'Names and surnames by themselves are easy to guess';
+                    return '名前と苗字だけでは推測されやすいです。';
                 } else {
-                    return 'Common names and surnames are easy to guess';
+                    return '一般的な名前と名字は推測されやすいです。';
                 }
         }
 
